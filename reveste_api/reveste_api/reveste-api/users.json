@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "nome": "Usuário Teste",
+    "email": "teste@reveste.com",
+    "senha": "123",
+    "role": "user"
+  },
+  {
+    "id": 1770731011223,
+    "nome": "Novo Usuario",
+    "email": "novo@teste.com",
+    "senha": "456",
+    "role": "user"
+  },
+  {
+    "id": 1770831174529,
+    "nome": "maria julia",
+    "email": "julia@acad.ifmsddd",
+    "senha": "o9999"
+  }
+]

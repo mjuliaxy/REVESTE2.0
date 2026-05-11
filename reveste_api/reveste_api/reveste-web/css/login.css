@@ -1,0 +1,123 @@
+* {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+}
+
+.left {
+    width: 35%;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.left img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fade 12s infinite;
+}
+
+.left img:nth-child(1) { animation-delay: 0s; }
+.left img:nth-child(2) { animation-delay: 4s; }
+.left img:nth-child(3) { animation-delay: 8s; }
+
+@keyframes fade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+
+.right {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #A55428, #D7A24E);
+}
+
+.login-box {
+    background: beige;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 300px;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+ .remember {
+    display: inline-flex;    
+    align-items: center;
+    gap: 4px;                
+    font-size: 14px;
+    line-height: 1;
+  }
+
+ .remember input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    width: 16px;             
+    height: 16px;
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+
+input[type="checkbox"] {
+    accent-color: #e89d11; 
+}
+
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: 2px solid #D7A24E;
+    background: #D7A24E;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-box button:hover {
+    background: white;
+    color: #D7A24E;
+}
+
+.signup {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.signup a {
+    color: #D7A24E;
+    text-decoration: underline;
+    font-weight: bold;
+}
+

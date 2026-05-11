@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de Cadastro - Reveste</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="left">
+        <img src="../imgs/login/looky2k.avif" />
+        <img src="../imgs/login/roupahomem.webp" />
+        <img src="../imgs/login/slzimg.webp" />
+    </div>
+
+    <div class="right">
+        <div class="login-box">
+            <h2>Cadastro</h2>
+
+            <input type="text" placeholder="Nome Completo" id="nome" />
+            <input type="text" placeholder="E-mail" id="email" />
+            <input type="password" placeholder="Senha" id="senha" />
+            <input type="password" placeholder="Confirmar Senha" id="confirmar-senha" />
+
+            <button id="btn-cadastrar">Cadastrar</button>
+
+            <p class="signup">
+                Já tem uma conta?
+                <a href="login.html">Faça Login</a>
+            </p>
+        </div>
+    </div>
+
+    <script type="module">
+        import { RevesteService } from '../js/RevesteService.js';
+
+        document.getElementById('btn-cadastrar').addEventListener('click', async () => {
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const confirmarSenha = document.getElementById('confirmar-senha').value;
+
+            if (!nome || !email || !senha || !confirmarSenha) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
+            if (senha !== confirmarSenha) {
+                alert('As senhas não coincidem!');
+                return;
+            }
+
+            const resultado = await RevesteService.signup(nome, email, senha);
+
+            if (resultado.success) {
+                alert('Cadastro realizado com sucesso! Agora você pode fazer login.');
+                window.location.href = 'login.html';
+            } else {
+                alert('Erro ao cadastrar: ' + (resultado.message || 'Tente novamente.'));
+            }
+        });
+    </script>
+</body>
+</html>
